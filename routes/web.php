@@ -20,3 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('linkedin', [SocialiteAuthController::class, 'linkedinRedirect'])->name('auth/linkedin');
+Route::get('/auth/linkedin-callback', [SocialiteAuthController::class, 'loginWithLinkedIn']);
